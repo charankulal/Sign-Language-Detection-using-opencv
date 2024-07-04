@@ -32,13 +32,13 @@ This Sign Language Detection System is built using OpenCV and Python. It leverag
 3. Create virtual environment
 
    ```bash
-   python3 -m venv .venv
+   python -m venv .venv
    ```
 
 4. Activate virtual environment
 
    ```bash
-   .venv/bin/activate
+   .venv/Scripts/activate
    ```
 
    for Mac or Linux
