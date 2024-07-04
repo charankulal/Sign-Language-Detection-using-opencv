@@ -20,6 +20,15 @@ This Sign Language Detection System is built using OpenCV and Python. It leverag
    git clone https://github.com/nicknochnack/RealTimeObjectDetection
    ```
 
+   ```text
+   move the contents of the RealTimeObjectDetection into the parent folder
+   Finally contents should look like
+   Sign-Language-Detection-using-opencv
+   |-labelImg
+   |-Tensorflow
+   
+   ```
+
 3. Create virtual environment
 
    ```bash
