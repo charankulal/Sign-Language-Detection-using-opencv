@@ -24,7 +24,7 @@ def main():
 
 
     
-    pTime = 0
+    
     cap = cv2.VideoCapture(0)
     detector = htm.HandDetector()
     handType = "Right"
@@ -100,13 +100,9 @@ def main():
                 cv2.putText(img, "No Hand detected", (10, 100),
                             cv2.FONT_HERSHEY_PLAIN, 2, (255, 255, 0), 1)
 
-            cTime = time.time()
-            fps = 1 / (cTime - pTime)
-            pTime = cTime
-
-            cv2.putText(img, f'FPS: {int(fps)}', (10, 70),
-                        cv2.FONT_HERSHEY_PLAIN, 3, (255, 0, 0), 3)
-
+            
+            img=cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+            
             frame_placeholder.image(img, channels="RGB")
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
