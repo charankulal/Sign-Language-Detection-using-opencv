@@ -27,10 +27,7 @@ class HandDetector():
                         img, handLms, self.mpHands.HAND_CONNECTIONS)
             # Both Hands are present in image(frame)
             if len(self.results.multi_handedness) == 2:
-                # Display 'Both Hands' on the image
-                cv2.putText(img, "Both Hands", (10, 100),
-                            cv2.FONT_HERSHEY_PLAIN, 2, (255, 255, 0), 1)
-
+                return img, "Both",self.results.multi_hand_landmarks
             # If any hand present
             else:
                 for i in self.results.multi_handedness:
@@ -39,19 +36,9 @@ class HandDetector():
                     label = MessageToDict(i)['classification'][0]['label']
 
                     if label == 'Left':
-
-                        # Display 'Left Hand' on
-                        # left side of window
-                        cv2.putText(img, label+' Hand', (10, 100),
-                                    cv2.FONT_HERSHEY_PLAIN, 2, (255, 255, 0), 1)
                         return img, 'Left', self.results.multi_hand_landmarks
 
                     if label == 'Right':
-
-                        # Display 'Left Hand'
-                        # on left side of window
-                        cv2.putText(img, label+' Hand', (10, 100),
-                                    cv2.FONT_HERSHEY_PLAIN, 2, (255, 255, 0), 1)
                         return img, 'Right', self.results.multi_hand_landmarks
 
         return img, "Both",self.results.multi_hand_landmarks
